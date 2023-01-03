@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_SETMUL" Class="DtClassSetmulDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-NM1VUKU2\SQLEXPRESS;Initial Catalog=DB_SETMUL;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_SETMULConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_m_user" Member="tbl_m_users">
+    <Type Name="tbl_m_user">
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nama_user" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_t_pembelian" Member="tbl_t_pembelians">
+    <Type Name="tbl_t_pembelian">
+      <Column Name="pid" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tanggal_transaksi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="kode_barang" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nama_barang" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pengukuran" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="jumlah_pembelian" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="harga" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_t_penjualan" Member="tbl_t_penjualans">
+    <Type Name="tbl_t_penjualan">
+      <Column Name="no_transaksi" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tanggal_transaksi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_item_penjualan" Member="tbl_item_penjualans">
+    <Type Name="tbl_item_penjualan">
+      <Column Name="pid" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="no_transaksi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="kode_barang" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nama_barang" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="jumlah" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="harga_satuan" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="harga_total" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_report" Member="vw_reports">
+    <Type Name="vw_report">
+      <Column Name="periode" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="pemasukan" Type="System.Decimal" DbType="Decimal(38,0) NOT NULL" CanBeNull="false" />
+      <Column Name="pembelian" Type="System.Decimal" DbType="Decimal(38,0) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_m_barang" Member="tbl_m_barangs">
+    <Type Name="tbl_m_barang">
+      <Column Name="kode_barang" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nama_barang" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pengukuran" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="stok_barang" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="harga_barang" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="jumlah_berat" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="tgl_msk_gudang" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="tgl_exp" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.cufn_GenerateNoTrans" Method="cufn_GenerateNoTrans" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.cusp_chartbar_dashboard" Method="cusp_chartbar_dashboard">
+    <Parameter Name="tipe" Type="System.Int32" DbType="Int" />
+    <ElementType Name="cusp_chartbar_dashboardResult">
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="jenis" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cusp_count_dashboard" Method="cusp_count_dashboard">
+    <ElementType Name="cusp_count_dashboardResult">
+      <Column Name="penjualan_hari_ini" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="penjualan_bulan_ini" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="penjualan_tahun_ini" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="penjualan_tahun_lalu" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

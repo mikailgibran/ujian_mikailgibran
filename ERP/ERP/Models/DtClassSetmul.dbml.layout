@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DtClassSetmul">
+  <DataContextMoniker Name="/DtClassSetmulDataContext" />
+  <nestedChildShapes>
+    <classShape Id="aa0bd83e-6175-48d3-8dab-5bff0118ee0a" isExpanded="false" absoluteBounds="0.5, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClassSetmulDataContext/tbl_m_user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ae58d93-583f-4646-833d-a8aa76c3c3c8" absoluteBounds="0.51499999999999968, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="877dfded-2256-4827-98c2-8858c8a1fc36" isExpanded="false" absoluteBounds="0.5, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClassSetmulDataContext/tbl_t_pembelian" />
+      <nestedChildShapes>
+        <elementListCompartment Id="276b1405-c41c-4132-9c0b-de8631e2786a" absoluteBounds="0.51499999999999968, 2.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b3a984e6-6062-43c2-938d-d546c41227c8" isExpanded="false" absoluteBounds="0.5, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClassSetmulDataContext/tbl_t_penjualan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="451b548f-135a-438e-a8a5-4f3bf42448c4" absoluteBounds="0.51499999999999968, 2.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4fdde3ba-ee1b-4c5c-bff5-24f27c2f29e7" isExpanded="false" absoluteBounds="0.5, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClassSetmulDataContext/tbl_item_penjualan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9ab9e52-cfce-4567-af67-f5e93c5a8b61" absoluteBounds="0.51499999999999968, 3.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="720f1b4b-be50-4d55-bfef-3b54d09366e9" isExpanded="false" absoluteBounds="0.5, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClassSetmulDataContext/vw_report" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d4f627e-46ce-4ddd-8f74-24e6d07ce2b2" absoluteBounds="0.51500000000000012, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1c6f7ec2-6ba7-4952-ac49-82d44d509cc3" isExpanded="false" absoluteBounds="3, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClassSetmulDataContext/tbl_m_barang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a3dc502-b18a-4c44-9f4f-5448ab8d691f" absoluteBounds="3.0149999999999997, 1.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

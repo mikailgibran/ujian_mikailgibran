@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon
+    <link rel="icon" type="image/png" sizes="16x16" href="~/ContectLayout/Form/assets/images/favicon.png"> -->
+    <title>@ViewBag.Title - Grosir & Eceran</title>
+    @{
+        ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+    }
+    <!-- Bootstrap Core CSS -->
+    <link href="~/ContectLayout/Form/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--This page css - Morris CSS -->
+    <link href="~/ContectLayout/Form/assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/ContectLayout/Form/css/style.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="~/ContectLayout/Form/css/colors/blue.css" id="theme" rel="stylesheet">
+
+    <link href="~/ContectLayout/Form/select2/select2.min.css" rel="stylesheet" />
+    <link href="@ViewBag.pathParent/Content/sweetalert.css" rel="stylesheet" type="text/css" />
+
+
+    <link href="~/Kendo/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Kendo/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="~/Kendo/css/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="~/Kendo/css/kendo.metro.min.css" rel="stylesheet" />
+    <link href="~/Kendo/css/kendo.blueopal.min.css" rel="stylesheet" />
+
+    @*<script src="~/Kendo/js/jquery.min.js"></script>
+        <script src="~/Kendo/jszip.min.js"></script>
+        <script src="~/Kendo/js/kendo.all.min.js"></script>*@
+
+    <script src="@ViewBag.pathParent/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="@ViewBag.pathParent/kendo/jszip.js"></script>
+    <script src="@ViewBag.pathParent/kendo/jszip.min.js"></script>
+    <script src="@ViewBag.pathParent/kendo/js/kendo.all.min.js"></script>
+    <script src="@ViewBag.pathParent/kendo/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@ViewBag.pathParent/Content/sweetalert.min.js"></script>
+
+
+
+    @*@Scripts.Render("~/bundles/ExportKendo")
+        @Scripts.Render("~/bundles/Export")
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/tpl_js")
+        @Scripts.Render("~/bundles/kendo_js")*@
+
+    <!-- Bootraps notify-->
+    <script src="~/ContectLayout/Form/js/bootstrap-notify.min.js"></script>
+</head>
+<body class="fix-header fix-sidebar card-no-border">
+    <input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <!--End Logo icon -->
+                        <!-- Logo text --><span>
+                            <!-- Light Logo text -->
+                            <img src="~/ContectLayout/Form/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            @*<a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="mdi mdi-message"></i>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>*@
+                            @*<div class="dropdown-menu dropdown-menu-right mailbox scale-up">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">Notifications</div>
+                                    </li>
+                                    <li>
+                                        <div class="message-center">
+                                            <div class="chatContent">
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </div>*@
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/ContectLayout/Form/assets/images/users/avatar5.png" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right scale-up">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <center>
+                                                <div class="u-img"><img src="~/ContectLayout/Form/assets/images/users/avatar5.png" alt="user"></div><br /><br />
+                                                <div class="u-text">
+                                                    <h4>@Session["nama_user"]</h4>
+                                                   @* <p class="text-muted">@Session["description"]  - @Session["distrik"]</p>*@
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                   @* <li><a href="@ViewBag.pathParent/Login/Profiles"><i class="ti-user"></i> Change Profile</a></li>*@
+                                    <li><a href="@ViewBag.pathParent/Login/logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- User profile -->
+                <div class="user-profile" style="background: url(@ViewBag.pathParent/ContectLayout/Form/assets/images/background/Square.png) no-repeat;">
+                    <!-- User profile image -->
+                    <div class="profile-img"> <img src="~/ContectLayout/Form/assets/images/users/avatar5.png" alt="user" /> </div>
+                    <!-- User profile text-->
+                    <div class="profile-text">
+                        <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" style="font-size:15px;">
+                            @Session["nama_user"] <br />
+                            @*<small>@Session["description"]  - @Session["distrik"]</small>*@
+                        </a>
+                        <div class="dropdown-menu animated flipInY">
+                            @*<a href="@ViewBag.pathParent/Login/Profiles" class="dropdown-item"><i class="ti-user"></i> Change Profile</a>*@
+                            <a href="@ViewBag.pathParent/Login/logout" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End User profile text-->
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">NAVIGATION MENU</li>
+                        <li><a class='has-arrow waves-effect waves-dark' href="@ViewBag.pathParent/Dashboard" aria-expanded='false'><i class="mdi mdi-view-dashboard"></i> <span class='hide-menu'> Dashboard </span></a></li>
+
+                        <li><a class='has-arrow waves-effect waves-dark' href="@ViewBag.pathParent/Admin" aria-expanded='false'><i class="mdi mdi-security"></i> <span class='hide-menu'> Admin </span></a></li>
+
+                        <li><a class='has-arrow waves-effect waves-dark' href="@ViewBag.pathParent/MBarang" aria-expanded='false'><i class="mdi mdi-database"></i> <span class='hide-menu'> Pasokan </span></a></li>
+
+                        <li><a class='has-arrow waves-effect waves-dark' href="@ViewBag.pathParent/Transaksi" aria-expanded='false'><i class="mdi mdi-briefcase"></i> <span class='hide-menu'> Transaksi </span></a></li>
+
+                        <li><a class='has-arrow waves-effect waves-dark' href="@ViewBag.pathParent/Laporan" aria-expanded='false'><i class="mdi mdi-file-chart"></i> <span class='hide-menu'> Laporan </span></a></li>
+
+
+                            @*@Html.Raw(ViewBag.leftMenu)*@
+</ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+            <!-- Bottom points-->
+            <div class="sidebar-footer">
+                @*<!-- item--><a href="@ViewBag.pathParent/Login/Profiles" class="link" data-toggle="tooltip" title="Change Profile"><i class="ti-settings"></i></a>*@
+                @*<!-- item--><a href="http://10.2.34.234/" class="link" data-toggle="tooltip" title="Lotus Notes"><i class="mdi mdi-gmail"></i></a>*@
+                <!-- item--><a href="@ViewBag.pathParent/Login/logout" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+            </div>
+            <!-- End Bottom points-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <div class="ImageHeader" style="width:100%;height:166px;background: url(@ViewBag.pathParent/ContectLayout/Form/assets/images/background/BACKGROUND_CDO_5.png);background-size:cover;">
+
+            </div>
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+
+                <div class="row page-titles">
+                    <div class="col-md-5 col-8 align-self-center">
+                        <h3 class="text-themecolor">@ViewBag.dashboard</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">@ViewBag.dashboardSmall</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                @RenderBody()
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> 2022 Setia Mulia "Grosir & Eceran" </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ==============================================================
+    <script src="~/TemplateLayout_v2/assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/ContectLayout/Form/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="~/ContectLayout/Form/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="~/ContectLayout/Form/select2/select2.min.js"></script>
+
+
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="~/ContectLayout/Form/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="~/ContectLayout/Form/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/ContectLayout/Form/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="~/ContectLayout/Form/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="~/ContectLayout/Form/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!--Custom JavaScript -->
+    <script src="~/ContectLayout/Form/js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <!--c3 JavaScript -->
+    <script src="~/ContectLayout/Form/assets/plugins/d3/d3.min.js"></script>
+    <script src="~/ContectLayout/Form/assets/plugins/c3-master/c3.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <script src="~/ContectLayout/Form/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+
+    <script>
+
+    $(document).ready(function () {
+       
+
+    });
+
+    </script>
+
+    <style>
+        .mail-contnet {
+            font-size: 12px;
+        }
+    </style>
+</body>
+
+</html>

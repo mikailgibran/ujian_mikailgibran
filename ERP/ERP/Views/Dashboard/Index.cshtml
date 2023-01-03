@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "SETIA MULIA";
+    ViewBag.dashboard = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <b><font style="font-size:20px">POPULASI HEADCOUNT</font></b><br /><br />
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <center>
+                            <div id="rcorner">
+
+                                <h3><b><font color="black">Penjualan Hari Ini</font></b></h3>
+                                <b><font color="black" size="8" id="hari_ini"></font></b>
+
+                            </div>
+                        </center>
+                    </div>
+                    <div class="col-md-3">
+                        <center>
+                            <div id="rcorner">
+
+                                <h3><b><font color="black">Penjualan Bulan Ini</font></b></h3>
+                                <b><font color="black" size="8" id="bulan_ini"></font></b>
+
+                            </div>
+                        </center>
+                    </div>
+                    <div class="col-md-3">
+                        <center>
+                            <div id="rcorner">
+
+                                <h3><b><font color="black">Penjualan Tahun Ini</font></b></h3>
+                                <b><font color="black" size="8" id="tahun_ini"></font></b>
+
+                            </div>
+                        </center>
+                    </div>
+                    <div class="col-md-3">
+                        <center>
+                            <div id="rcorner">
+
+                                <h3><b><font color="black">Penjualan Tahun Lalu</font></b></h3>
+                                <b><font color="black" size="8" id="tahun_lalu"></font></b>
+
+                            </div>
+                        </center>
+                    </div>
+
+                </div>
+                <hr style="border:1px solid black" />
+
+                <div class="row">
+                        <br /><br />
+                        <div class="col-md-6">
+                            <b><font style="font-size:20px">Hari Ini</font></b>
+                            <div class="col-md-6" id="chart_hari_ini" style="height:200px;width:500px"></div><br />
+                        </div>
+                        <br /><br />
+                        <div class="col-md-6">
+                            <b><font style="font-size:20px">Bulan Ini</font></b>
+                            <div class="col-md-6" id="chart_bulan_ini" style="height:200px;width:500px"></div><br />
+                        </div>
+
+                </div>
+
+                <div class="row">
+                        <br /><br />
+                        <div class="col-md-6">
+                            <b><font style="font-size:20px">Tahun Ini</font></b>
+                            <div id="chart_tahun_ini" style="height:200px;width:500px"></div><br />
+                        </div>
+                        <br /><br />
+                        <div class="col-md-6">
+                            <b><font style="font-size:20px">Tahun Lalu</font></b>
+                            <div id="chart_tahun_lalu" style="height:200px;width:500px"></div><br />
+                        </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    #rcorner {
+        background: #ebedf0;
+        padding: 20px;
+        // width: 110px;
+        height: 140px;
+    }
+</style>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/Dashboard.js"></script> 
